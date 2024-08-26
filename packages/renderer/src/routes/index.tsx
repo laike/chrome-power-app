@@ -11,6 +11,7 @@ import {useTranslation} from 'react-i18next';
 import Logs from '../pages/logs';
 import Start from '../pages/start';
 import Api from '../pages/api';
+// 测试新功能
 
 interface RouteOption {
   path: string;

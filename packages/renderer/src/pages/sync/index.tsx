@@ -246,7 +246,7 @@ const Sync = () => {
     // 如果选中了多个窗口 则将选中的窗口进行群控 否则不进行群控 并且设置主控窗口为当前选中的窗口
     const masterProcessId = selectedRowKeys[0];
     const slaveProcessIds = selectedRowKeys.slice(1);
-    SyncBridge.startGroupControl(masterProcessId, slaveProcessIds);
+    SyncBridge.startGroupControl();
   };
 
   const [groupControlVisible, setGroupControlVisible] = useState(false);
@@ -282,7 +282,9 @@ const Sync = () => {
               </Modal>
               <Button
                 type="primary"
-                onClick={() => setGroupControlVisible(true)}
+                onClick={() => {
+                  handleGroupControl();
+                }}
               >
                 群控
               </Button>
